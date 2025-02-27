@@ -365,7 +365,7 @@
         $('header').removeClass('clone');
 
         jQuery('header').removeClass("bg-dark");
-        jQuery('header').css("height", "70px");
+        jQuery('header').css("height", "120px");
         mobile_menu_show = 0;
 
 
@@ -412,15 +412,10 @@
                         jQuery('#mainmenu li').css("width", "100%");
                     }
                 }
-
             }
-
-
         });
     }
     window.onload = init();
-
-
     // --------------------------------------------------
     // owlCarousel
     // --------------------------------------------------
@@ -505,9 +500,6 @@
         autoPlay: 4000,
         transitionStyle: "fade"
     });
-
-
-
 
     jQuery(".blog-slide").owlCarousel({
         items: 1,
