@@ -50,15 +50,54 @@
 
     <div id="wrapper">
         <header>
-            <a href="../" class="logo-header">
-                <img src="../images/logo.png" alt="image">
-            </a>
-            <a href="index-en.html" class="flag">
-                <img src="../images/united-states.png" alt="flag">
-            </a>
-            <a href="../" class="home">
-                <img src="../images/home-page.png" alt="flag">
-            </a>
+            <div class="navigation-wrap start-header start-style">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar navbar-expand-md navbar-light">
+
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto py-4 py-md-0">
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../">الرئيسية</a>
+                                        </li>
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../ar/about.html">من نحن</a>
+                                        </li>
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../ar/products_services.html">المنتجات
+                                                والخدمات</a>
+                                        </li>
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../ar/blogs.html">المدونة</a>
+                                        </li>
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../ar/FAQs.html">الأسئلة الأكثر شيوعاً</a>
+                                        </li>
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../ar/contact_us.html">تواصل معنا</a>
+                                        </li>
+                                        <li class="nav-item ps-4 ps-md-0 ms-0 ms-md-4">
+                                            <a class="nav-link" href="../en/">ENGLISH</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a class="navbar-brand" href="./">
+                                    <img src="../images/logo-2.png" alt="logo">
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
 
         <section id="subheader" class="jarallax text-light">
@@ -279,39 +318,8 @@
     ================================================== -->
     <script src="../js/plugins.js"></script>
     <script src="../js/designesia.js"></script>
-    <script>
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                const targetUrl = new URL(href, window.location.href);
-                const currentUrl = new URL(window.location.href);
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-                // Always close the mobile menu
-                document.getElementById('menu-icon').checked = false;
-
-                // Cross-page navigation
-                if (targetUrl.pathname !== currentUrl.pathname) return;
-
-                // Same-page navigation
-                e.preventDefault();
-
-                setTimeout(() => {
-                    const target = document.querySelector(targetUrl.hash);
-                    if (target) {
-                        // Get header height (adjust selector if needed)
-                        const header = document.querySelector('header');
-                        const headerHeight = header ? header.offsetHeight : 0;
-
-                        // Scroll to adjusted position
-                        window.scrollTo({
-                            top: target.offsetTop - headerHeight,
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 1000); // Match your CSS transition delay
-            });
-        });
-    </script>
 
 </body>
 

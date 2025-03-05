@@ -1,29 +1,5 @@
-// © Copyright 2024 - Baresto by Designesia 
-
 (function ($) {
-    'use strict'; // use strict mode
-
-    // editable value
-    var logo_pos = 1; // logo position; 1 - center, 2 - left
-    var logo_center_top_margin = '-15px'; // define margin top for 'center' logo image
-    var logo_left_top_margin = '30px'; // define margin top for 'left' logo image
-    var header_sticky = 1; // 1 - yes, 0 - no
-    var header_color_on_scroll = 1; // 1- dark, 2 - light
-
-    // read only
-    var logo_dir_1 = jQuery('.logo_dark_bg').attr('src');
-    var logo_dir_2 = jQuery('.logo_light_bg').attr('src');
-    var tmp_lltm = logo_left_top_margin;
-    var mobile_menu_show = 0;
-
-    if (header_sticky == 0) {
-        $('header').addClass('header_scroll');
-    }
-    $('header').addClass('transparent');
-    if (header_color_on_scroll == 2) {
-        $('header').addClass('header_light');
-    }
-
+    'use strict';
 
     /* --------------------------------------------------
      * plugin | magnificPopup
@@ -149,38 +125,6 @@
         });
     }
 
-
-    // --------------------------------------------------
-    // init
-    // --------------------------------------------------
-    function init_de() {
-
-        var $masonry = jQuery('.masonry');
-        $masonry.isotope({
-            itemSelector: '.item',
-            filter: '*'
-        });
-    }
-
-    /* --------------------------------------------------
-     * custom background
-     * --------------------------------------------------*/
-    function custom_bg() {
-        $("div,section").css('background-color', function () {
-            return jQuery(this).data('bgcolor');
-        });
-        $("div,section").css('background-image', function () {
-            return jQuery(this).data('bgimage');
-        });
-        $("div,section").css('background-size', function () {
-            return 'cover';
-        });
-    }
-
-    custom_bg();
-    init_de();
-
-
     // --------------------------------------------------
     // function
     // --------------------------------------------------
@@ -244,298 +188,6 @@
 
     });
 
-    jQuery(window).on("scroll", function () {
-        jQuery("header").addClass("clone", 1000, "easeOutBounce");
-
-        var $document = $(document);
-        var vscroll = 0;
-
-        if ($document.scrollTop() >= 50 && vscroll == 0) {
-            jQuery("header.autoshow").removeClass("scrollOff");
-            jQuery("header.autoshow").addClass("scrollOn");
-            vscroll = 1;
-        } else {
-            jQuery("header.autoshow").removeClass("scrollOn");
-            jQuery("header.autoshow").addClass("scrollOff");
-            vscroll = 0;
-        }
-
-
-
-    });
-
-
-    // logo center
-
-    function h_center_logo() {
-        var position = jQuery(".header_center ul#mainmenu > li").length;
-
-        var i = 0;
-        jQuery('.header_center ul#mainmenu > li').each(function () {
-            if (i == Math.floor(position / 2) - 1) {
-                jQuery(this).after('<li class="logo_pos"><img class="c_logo_light" src="' + logo_dir_1 + '"/><img class="c_logo_dark" src="' + logo_dir_2 + '"/></li>');
-            }
-            i++;
-        });
-
-        // settings
-
-        jQuery('header.header_center .logo_pos img').css('margin-top', logo_center_top_margin);
-
-    }
-
-    // mainmenu create span
-    jQuery('#mainmenu > li > a').each(function () {
-        if ($(this).next("ul").length > 0) {
-            $("<span></span>").insertAfter($(this));
-        }
-    });
-
-    jQuery('#mainmenu > li > ul > li > a').each(function () {
-        if ($(this).next("ul").length > 0) {
-            $("<span></span>").insertAfter($(this));
-        }
-    });
-
-
-    // mainmenu arrow click
-    jQuery("#mainmenu > li > span, #mainmenu > li > ul > li > span").on("click", function () {
-        $('header').css("height", "auto");
-        var iteration = $(this).data('iteration') || 1;
-        switch (iteration) {
-            case 1:
-                $(this).next("ul").css("height", "auto");
-                var curHeight = $(this).next("ul").height();
-                $(this).next("ul").css("height", "0");
-                $(this).next("ul").animate({
-                    'height': curHeight
-                }, 300, 'easeOutCubic');
-
-                break;
-
-            case 2:
-                $(this).next("ul").animate({
-                    'height': "0"
-                }, 300, 'easeOutCubic');
-                break;
-        }
-        iteration++;
-        if (iteration > 2) iteration = 1;
-        $(this).data('iteration', iteration);
-    });
-
-
-    if (logo_pos == 1) {
-        h_center_logo();
-    } else {
-        jQuery('header').removeClass("header_center");
-        jQuery('header').addClass("header_left");
-        jQuery('header.header_left #logo img').css('margin-top', logo_left_top_margin);
-    }
-
-    jQuery(window).resize(function () {
-        enquire.register("screen and (min-width: 993px)", {
-            match: function () {
-                jQuery('header.header_left #logo img').css('margin-top', tmp_lltm);
-                if (header_color_on_scroll == 2) {
-                    jQuery('header').addClass("header_light");
-                }
-            },
-            unmatch: function () {
-                jQuery('header.header_left #logo img').css('margin-top', "0px");
-                if (header_color_on_scroll == 2) {
-                    jQuery('header').removeClass("header_light");
-                }
-            }
-        });
-
-
-        init_de();
-        video_autosize();
-
-        jQuery('.de-preview').each(function () {
-            var w = parseInt(jQuery(this).css("width"));
-            jQuery(this).css("height", w);
-            var h = parseInt(jQuery(this).find("img").css("height")) - w;
-            jQuery(this).find("img").css('bottom', -h);
-        });
-
-
-        $('header').removeClass('smaller');
-        $('header').removeClass('clone');
-
-        jQuery('header').removeClass("bg-dark");
-        jQuery('header').css("height", "120px");
-        mobile_menu_show = 0;
-
-
-    });
-
-
-    function init() {
-
-        window.addEventListener('scroll', function (e) {
-
-            var mq = window.matchMedia("(min-width: 993px)");
-            var ms = window.matchMedia("(min-width: 768px)");
-            if (mq.matches) {
-                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                    shrinkOn = 0,
-                    header = jQuery("header");
-                if (distanceY > shrinkOn) {
-                    header.addClass("smaller");
-                } else {
-                    if (header.hasClass('smaller')) {
-                        header.removeClass('smaller');
-                    }
-                }
-            }
-            if (mq.matches) {
-                if (jQuery("header").hasClass("side-header")) {
-                    if (jQuery(document).scrollTop() >= h) {
-                        jQuery('#de-sidebar').css("position", "fixed");
-                        if (parseInt(sh, 10) > parseInt(dh, 10)) {
-                            jQuery('#de-sidebar').css("top", -h);
-                        }
-                        jQuery('#main').addClass("col-md-offset-3");
-                        jQuery('h1#logo img').css("padding-left", "7px");
-                        jQuery('header .h-content').css("padding-left", "7px");
-                        jQuery('#mainmenu li').css("width", "103%");
-                    } else {
-                        jQuery('#de-sidebar').css("position", "relative");
-                        if (parseInt(sh, 10) > parseInt(dh, 10)) {
-                            jQuery('#de-sidebar').css("top", 0);
-                        }
-                        jQuery('#main').removeClass("col-md-offset-3");
-                        jQuery('h1#logo img').css("padding-left", "0px");
-                        jQuery('header .h-content').css("padding-left", "0px");
-                        jQuery('#mainmenu li').css("width", "100%");
-                    }
-                }
-            }
-        });
-    }
-    window.onload = init();
-    // --------------------------------------------------
-    // owlCarousel
-    // --------------------------------------------------
-
-    jQuery("#gallery-carousel").owlCarousel({
-        items: 4,
-        navigation: false,
-        pagination: false
-    });
-
-    jQuery("#timeline-carousel").owlCarousel({
-        items: 4,
-        navigation: false,
-        pagination: true
-    });
-
-    jQuery(".carousel-gallery").owlCarousel({
-        items: 4,
-        navigation: false,
-        pagination: false
-    });
-
-    jQuery("#blog-carousel").owlCarousel({
-        items: 2,
-        navigation: false,
-        pagination: true
-    });
-
-
-
-    jQuery("#testimonial-carousel").owlCarousel({
-        items: 2,
-        navigation: false
-    });
-
-    jQuery("#logo-carousel").owlCarousel({
-        items: 6,
-        navigation: false,
-        pagination: false,
-        autoPlay: true
-    });
-
-    jQuery("#contact-carousel").owlCarousel({
-        items: 1,
-        singleItem: true,
-        navigation: false,
-        pagination: false,
-        autoPlay: true
-    });
-
-
-    jQuery(".carousel-single-loop").owlCarousel({
-        items: 1,
-        singleItem: true,
-        navigation: false,
-        pagination: false,
-        autoPlay: true,
-        mouseDrag: false,
-        touchDrag: false,
-        transitionStyle: "fade"
-    });
-
-
-    jQuery(".text-slider").owlCarousel({
-        items: 1,
-        singleItem: true,
-        navigation: false,
-        pagination: false,
-        mouseDrag: false,
-        touchDrag: false,
-        autoPlay: 4000,
-        transitionStyle: "fade"
-    });
-
-    jQuery(".fluid-carousel").owlCarousel({
-        items: 6,
-        singleItem: false,
-        navigation: false,
-        pagination: false,
-        mouseDrag: false,
-        touchDrag: false,
-        autoPlay: 4000,
-        transitionStyle: "fade"
-    });
-
-    jQuery(".blog-slide").owlCarousel({
-        items: 1,
-        singleItem: true,
-        navigation: false,
-        pagination: false,
-        autoPlay: false
-    });
-
-    jQuery(".testimonial-list").owlCarousel({
-        items: 1,
-        singleItem: true,
-        navigation: false,
-        pagination: true,
-        autoPlay: false
-    });
-
-
-    // Custom Navigation owlCarousel
-    $(".next").on("click", function () {
-        $(this).parent().parent().find('.blog-slide').trigger('owl.next');
-    });
-    $(".prev").on("click", function () {
-        $(this).parent().parent().find('.blog-slide').trigger('owl.prev');
-    });
-
-    // --------------------------------------------------
-    // custom positiion
-    // --------------------------------------------------
-    var $doc_height = jQuery(window).innerHeight();
-    jQuery('#homepage #content.content-overlay').css("margin-top", $doc_height);
-    var picheight = jQuery('.center-y').css("height");
-    picheight = parseInt(picheight, 10);
-    jQuery('.center-y').css('margin-top', (($doc_height - picheight) / 2) - 90);
-    jQuery('.full-height').css("height", $doc_height);
-    jQuery('.full-height .de-video-container').css("height", $doc_height);
 
 
 
@@ -990,4 +642,37 @@
 
     });
 
+    $(function () {
+        var header = $(".start-style");
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 10) {
+                header.removeClass('start-style').addClass("scroll-on");
+            } else {
+                header.removeClass("scroll-on").addClass('start-style');
+            }
+        });
+    });
+
+    //Animation
+
+    $(document).ready(function () {
+        $('body.hero-anime').removeClass('hero-anime');
+    });
+
+    //Menu On Hover
+
+    $('body').on('mouseenter mouseleave', '.nav-item', function (e) {
+        if ($(window).width() > 750) {
+            var _d = $(e.target).closest('.nav-item'); _d.addClass('show');
+            setTimeout(function () {
+                _d[_d.is(':hover') ? 'addClass' : 'removeClass']('show');
+            }, 1);
+        }
+    });
+
+
 })(jQuery);
+
+
