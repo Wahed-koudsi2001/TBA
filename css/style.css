@@ -603,13 +603,50 @@ header.smaller.header_center #mainmenu > li > a {
 /* section */
 /* ================================================== */
 section {
+	background: #18191b;
 	padding: 70px 0;
 }
-section {
-	background: #18191b;
-	background: url(../images/about-bg-image.png) no-repeat;
-	background-position: top center;
-	background-size: 100% auto;
+section.bg-coffee {
+	position: relative;
+}
+section.bg-coffee::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 20px;
+	background: url(../images/bg-coffee-beans.png) no-repeat center center/cover;
+	animation: coffee 20s linear infinite;
+	-webkit-animation: coffee 20s linear infinite;
+	width: 80px;
+	height: 80px;
+}
+
+section.bg-coffee::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 25%;
+	background: url(../images/chocolate.png) no-repeat center center/cover;
+	animation: coffee 20s linear infinite;
+	-webkit-animation: coffee 20s linear infinite;
+	width: 80px;
+	height: 80px;
+}
+@keyframes coffee {
+	0% {
+		transform: rotate(0);
+		-webkit-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-ms-transform: rotate(0);
+		-o-transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+	}
 }
 
 .full-height {
