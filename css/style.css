@@ -7137,4 +7137,7 @@ i.icon-big {
 	.contact-us-form {
 		padding: 20px;
 	}
+	section.bg-coffee::after {
+		display: none;
+	}
 }
