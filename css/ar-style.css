@@ -27,7 +27,7 @@ h5.uptitle,
     right: 0;
     left: initial;
 }
-.accordion-button::after{
+.accordion-button::after {
     margin-right: auto;
     margin-left: initial;
 }
@@ -35,9 +35,50 @@ h5.uptitle,
     margin-left: auto;
     margin-right: initial;
 }
+.product-content {
+    text-align: right;
+}
+.product-price,
+.product-rating {
+    justify-content: end;
+}
+.about-us-footer {
+    justify-content: flex-end;
+}
+.blog-list .post-text {
+    padding-right: 0;
+    padding-left: 100px;
+    text-align: right;
+}
+.blog-list .date-box {
+    right: initial;
+    left: 0;
+}
+.front .inner,
+.back .inner {
+    text-align: right;
+}
+.accordion-collapse {
+    text-align: right;
+}
+.accordion-button {
+    flex-direction: row-reverse;
+}
+.contact-us-form .form-control,
+.contact-form-content h3,
+.contact-form-content p,
+.contact-information,
+.contact-form-btn {
+    text-align: right;
+}
 @media (max-width: 768px) {
     .contact-info-body .contact-info-box-1 .icon-box,
     .contact-info-body .contact-info-box-2 .icon-box {
         margin: 0 15px;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row-reverse;
     }
 }
