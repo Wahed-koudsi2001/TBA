@@ -602,7 +602,8 @@ section {
 	background: #18191b;
 	padding: 70px 0;
 }
-section.bg-coffee {
+section.bg-coffee,
+section.bg-icon-1 {
 	position: relative;
 }
 section.bg-coffee::before {
@@ -617,11 +618,45 @@ section.bg-coffee::before {
 	height: 80px;
 }
 
+.bg-icon-1::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	background: url(../images/ice-cream.png) no-repeat center center/cover;
+	animation: coffee 20s linear infinite;
+	-webkit-animation: coffee 20s linear infinite;
+	width: 80px;
+	height: 80px;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
+.bg-icon-1::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: url(../images/bg-coffee-beans-2.png) no-repeat center center/cover;
+	animation: coffee 20s linear infinite;
+	-webkit-animation: coffee 20s linear infinite;
+	width: 80px;
+	height: 80px;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
 section.bg-coffee::after {
 	content: "";
 	position: absolute;
 	right: 0;
-	bottom: 25%;
+	top: 25%;
 	background: url(../images/chocolate.png) no-repeat center center/cover;
 	animation: coffee 20s linear infinite;
 	-webkit-animation: coffee 20s linear infinite;
@@ -6866,7 +6901,7 @@ i.icon-big {
 	flex-wrap: wrap;
 	gap: 40px;
 }
-.contact-form-btn{
+.contact-form-btn {
 	text-align: left;
 }
 .contact-info-box-1,
