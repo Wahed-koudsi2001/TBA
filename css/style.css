@@ -1,47 +1,3 @@
-/* ================================================== */
-/* created by designesia
-
-* body
-* header
-	* subheader
-* navigation
-* content
-* section#
-* footer
-* sidebar
-* blog
-* products
-* contact
-* coming soon page
-* elements
-	* address
-	* border
-	* breadcrumb
-	* button
-	* columns
-	* counter
-	* divider
-	* dropcap
-	* form
-	* heading
-	* icon font
-	* list
-	* map
-	* package
-	* page heading
-	* pagination
-	* pricing
-	* progress bar
-	* social icons
-	* spacer
-	* table
-	* tabs
-	* team
-	* testimonial
-* css attributes
-* media query
-
-/* ================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -234,10 +190,10 @@ button:focus:not(:focus-visible) {
 
 /* home */
 .home {
-	height: calc(100vh + 115px);
+	height: calc(100vh + 110px);
 	width: 100%;
 	position: relative;
-	margin-bottom: 115px;
+	margin-bottom: 110px;
 }
 .home video {
 	position: absolute;
@@ -599,7 +555,7 @@ header.smaller.header_center #mainmenu > li > a {
 /* section */
 /* ================================================== */
 section {
-	background: #18191b;
+	background: #fff;
 	padding: 70px 0;
 }
 section.bg-coffee,
@@ -832,12 +788,12 @@ footer img.logo {
 	font-weight: 600;
 	font-size: 36px;
 	padding-bottom: 0px;
-	color: #ffffff;
+	color: #e9c5c3;
 	font-family: var(--title-font);
 }
 
 .blog-list .date-box .month {
-	color: #fff;
+	color: #e9c5c3;
 	font-family: var(--title-font);
 	font-weight: 600;
 	letter-spacing: 5px;
@@ -1426,7 +1382,7 @@ input.btn-custom:hover {
 .btn-line,
 a.btn-line,
 input.btn-line {
-	background: none;
+	background: #e9c5c3;
 	border: solid 1px #222;
 	color: #fff;
 	font-weight: 600;
@@ -1685,6 +1641,10 @@ a.btn-slider.btn-border:hover:after {
 	padding: 30px 0 30px 0;
 	background: none;
 }
+.de_count h3,
+.de_count h4 {
+	color: #ffff;
+}
 .de_count h3 {
 	font-family: var(--title-font), Arial, Helvetica, sans-serif;
 	font-size: 48px;
@@ -1806,7 +1766,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--title-font-color-dark);
+	color: #e9c5c3;
 	font-family: var(--title-font);
 	font-weight: var(--title-font-weight);
 }
@@ -3725,7 +3685,6 @@ object {
 	padding: 50px 0 50px 0;
 	border-top: 1px solid var(--primary-color);
 	border-bottom: 1px solid var(--primary-color);
-	margin-top: 100px;
 }
 
 .call-to-action h3 {
@@ -3785,7 +3744,7 @@ object {
 
 p.lead {
 	font-size: 15px;
-	color: var(--title-font-color-dark);
+	color: #000;
 	font-weight: 500;
 }
 
@@ -4501,7 +4460,7 @@ figure.hover-zoom:hover img {
 }
 
 .bb > [class*="col-"]:before {
-	background: rgba(255, 255, 255, 0.2);
+	background: #e9c5c3;
 	bottom: 0;
 	content: " ";
 	left: 0;
@@ -6312,7 +6271,7 @@ i.icon-big {
 }
 .product-title a,
 .product-title div {
-	color: #fff;
+	color: #000;
 }
 .product-price {
 	font-size: 20px;
@@ -6335,7 +6294,7 @@ i.icon-big {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1;
-	color: #fff;
+	color: #000;
 }
 .product-rating {
 	display: -webkit-box;
@@ -6535,7 +6494,6 @@ i.icon-big {
 }
 
 .about-us {
-	background: url(../images/about-bg-image.png) no-repeat;
 	background-position: top center;
 	background-size: 100% auto;
 }
@@ -6893,7 +6851,7 @@ i.icon-big {
 	color: var(--primary-color);
 }
 .accordion-button {
-	color: #fff;
+	color: #000;
 }
 
 .contact-info-body {
@@ -7055,11 +7013,12 @@ i.icon-big {
 }
 
 .contact-us-form .form-control::placeholder {
-	color: #fff;
+	color: #ddd;
 }
 
 .google-map {
 	padding: 50px 0 100px;
+	background-color: #fff;
 }
 
 .google-map-iframe,
