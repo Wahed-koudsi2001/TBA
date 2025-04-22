@@ -557,7 +557,7 @@ header.smaller.header_center #mainmenu > li > a {
 /* section */
 /* ================================================== */
 section {
-	background: #fff;
+	background: #18191b;
 	padding: 70px 0;
 	border-bottom: 1px solid var(--primary-color);
 }
@@ -630,7 +630,7 @@ footer img.logo {
 	position: relative;
 	padding-left: 25px;
 	margin-bottom: 10px;
-	color: #6b7069;
+	color: #fff;
 }
 .blog-list li::before {
 	content: "";
@@ -1309,8 +1309,8 @@ input.btn-custom:hover {
 .btn-line,
 a.btn-line,
 input.btn-line {
-	background: #997173;
-	border: solid 1px #222;
+	background: transparent;
+	border: solid 1px var(--accent-color);
 	color: #fff;
 	font-weight: 600;
 	font-family: var(--title-font);
@@ -3464,7 +3464,6 @@ object {
 	min-width: 100%;
 	width: 100%;
 	height: auto;
-	min-height: 100%;
 }
 
 .de-video-container {
@@ -3669,7 +3668,7 @@ object {
 
 p.lead {
 	font-size: 15px;
-	color: #6b7069;
+	color: #fff;
 	font-weight: 500;
 }
 
@@ -4985,7 +4984,7 @@ body:after {
 
 p {
 	margin-bottom: 20px;
-	color: #6b7069;
+	color: #fff;
 }
 
 p.intro {
@@ -6197,7 +6196,7 @@ i.icon-big {
 }
 .product-title a,
 .product-title div {
-	color: #000;
+	color: #fff;
 }
 .product-price {
 	font-size: 20px;
@@ -6810,7 +6809,7 @@ i.icon-big {
 	color: var(--primary-color);
 }
 .accordion-button {
-	color: #000;
+	color: #fff;
 }
 
 .contact-info-body {
@@ -6977,7 +6976,7 @@ i.icon-big {
 
 .google-map {
 	padding: 50px 0 100px;
-	background-color: #fff;
+	background-color: #18191b;
 }
 
 .google-map-iframe,
