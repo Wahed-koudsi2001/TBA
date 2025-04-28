@@ -6186,21 +6186,6 @@ i.icon-big {
 	border-radius: 50px;
 	background-color: #1f2226;
 }
-.product-content {
-	padding: 20px;
-	text-align: left;
-}
-.product-title {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.5;
-	margin-bottom: 10px;
-	color: #1f2226;
-}
-.product-title a,
-.product-title div {
-	color: #fff;
-}
 .product-price {
 	font-size: 20px;
 	font-weight: 600;
@@ -6223,25 +6208,6 @@ i.icon-big {
 	font-weight: 400;
 	line-height: 1;
 	color: #000;
-}
-.product-rating {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	justify-content: start;
-}
-.product-rating-bg,
-.product-rating-active {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	width: 80px;
-	height: 16px;
-	background-image: url(../images/rating-bg.svg);
-	background-repeat: repeat-x;
-}
-.product-rating-active {
-	background-image: url(../images/rating-active.svg);
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -6596,7 +6562,7 @@ i.icon-big {
 .row-wahed-2 {
 	display: grid;
 	gap: 30px;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 }
 .card {
 	height: 340px;
@@ -6655,17 +6621,7 @@ i.icon-big {
 	background-size: cover;
 	background-position: center center;
 }
-.front:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: block;
-	backface-visibility: hidden;
-	background: linear-gradient(40deg, var(--primary-color), rgba(255, 242, 166, 0.7));
-}
+
 .front .inner {
 	display: flex;
 	flex-direction: column;
@@ -7031,7 +6987,13 @@ i.icon-big {
 		margin: 30px 0 0 0;
 	}
 }
-
+.dark-scheme {
+	background: url(../images/shape.svg) no-repeat center center/cover;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	position: absolute;
+}
 @media (max-width: 768px) {
 	.swiper-horizontal > .swiper-pagination-bullets,
 	.swiper-pagination-bullets.swiper-pagination-horizontal,
