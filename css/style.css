@@ -6987,14 +6987,22 @@ i.icon-big {
 		margin: 30px 0 0 0;
 	}
 }
-.dark-scheme {
+.shape {
 	background: url(../images/shape.svg) no-repeat center center/cover;
 	height: 100%;
-	width: 100%;
-	top: 0;
+	width: 100px;
 	position: absolute;
 }
+.shape-1 {
+	right: 0;
+}
+.shape-2 {
+	left: 0;
+}
 @media (max-width: 768px) {
+	.shape {
+		display: none;
+	}
 	.swiper-horizontal > .swiper-pagination-bullets,
 	.swiper-pagination-bullets.swiper-pagination-horizontal,
 	.swiper-pagination-custom,
