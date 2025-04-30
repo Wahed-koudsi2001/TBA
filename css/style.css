@@ -205,6 +205,9 @@ button:focus:not(:focus-visible) {
 	top: 0;
 	left: 0;
 }
+.accordion-item .accordion-button{
+	font-weight: bold;
+}
 /* subheader */
 #subheader {
 	background: #222;
