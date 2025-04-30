@@ -6565,7 +6565,8 @@ i.icon-big {
 	grid-template-columns: repeat(3, 1fr);
 }
 .card {
-	height: 340px;
+	height: 360px;
+	width: 360px;
 	padding: 0;
 	perspective: 1500px;
 	border-radius: 0;
