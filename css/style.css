@@ -678,7 +678,6 @@ footer img.logo {
 	color: #fff;
 }
 .blog-list .post-text {
-	padding-right: 100px;
 	text-align: left;
 }
 .post-content {
@@ -686,52 +685,6 @@ footer img.logo {
 }
 .blog-list .blog-slider {
 	margin-bottom: -60px;
-}
-.blog-list .date-box {
-	width: 74px;
-	padding: 15px 5px 0 5px;
-	position: absolute;
-	text-align: center;
-	text-shadow: none;
-	border: solid 2px var(--secondary-color);
-	right: 0;
-}
-.blog-list .date-box .day,
-.blog-list .date-box .month {
-	display: block;
-	color: #fff;
-	text-align: center;
-	width: 60px;
-	z-index: 100;
-}
-
-.de_light .blog-list .date-box .day,
-.de_light .blog-list .date-box .month {
-	color: var(--primary-color);
-}
-
-.blog-list .date-box .month {
-	font-size: 14px;
-}
-
-.blog-list .date-box .day {
-	font-weight: 600;
-	font-size: 36px;
-	padding-bottom: 0px;
-	color: #997173;
-	font-family: var(--title-font);
-}
-
-.blog-list .date-box .month {
-	color: #997173;
-	font-family: var(--title-font);
-	font-weight: 600;
-	letter-spacing: 5px;
-	padding: 7px 0 7px 5px;
-}
-
-.de_light .text-light .blog-list .date-box .month {
-	color: #fff;
 }
 
 .blog-item {
@@ -6566,7 +6519,7 @@ i.icon-big {
 }
 .card {
 	height: 360px;
-	width: 360px;
+	/* width: 360px; */
 	padding: 0;
 	perspective: 1500px;
 	border-radius: 0;
@@ -6991,7 +6944,7 @@ i.icon-big {
 .shape {
 	background: url(../images/shape.svg) no-repeat center center/cover;
 	height: 100%;
-	width: 100px;
+	width: 80px;
 	position: absolute;
 }
 .shape-1 {
@@ -7059,8 +7012,10 @@ i.icon-big {
 		margin: 25px 0;
 	}
 	.card {
-		height: 450px;
+		height: 250px;
+		width: 100%;
 	}
+
 	.contact-info-box-1,
 	.contact-info-box-2 {
 		padding: 20px;
@@ -7078,9 +7033,6 @@ i.icon-big {
 	.contact-us-form {
 		padding: 20px;
 		margin-top: 30px;
-	}
-	.blog-list .date-box {
-		display: none;
 	}
 	.blog-list .post-text {
 		padding: 0 !important;

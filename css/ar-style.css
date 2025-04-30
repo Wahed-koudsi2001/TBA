@@ -45,11 +45,6 @@ h5.uptitle,
 .about-us-footer {
     justify-content: flex-end;
 }
-.blog-list .post-text {
-    padding-right: 0;
-    padding-left: 100px;
-    text-align: right;
-}
 .blog-list .date-box {
     right: initial;
     left: 0;
