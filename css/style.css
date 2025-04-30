@@ -207,9 +207,12 @@ button:focus:not(:focus-visible) {
 }
 /* subheader */
 #subheader {
-	padding: 170px 0 80px 0;
 	background: #222;
 	overflow: hidden;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .video-section {
 	height: 560px;
@@ -5655,7 +5658,6 @@ i.icon-big {
 		background: rgba(0, 0, 0, 1);
 	}
 	#subheader {
-		padding: 180px 0 40px 0;
 		margin: 0;
 	}
 	#subheader h1 {
