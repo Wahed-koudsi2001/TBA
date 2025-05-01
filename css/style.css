@@ -7042,6 +7042,9 @@ i.icon-big {
 	.blog-list .post-text {
 		padding: 0 !important;
 	}
+	.post-text ul{
+		padding: 0;
+	}
 	.blog-list .post-text ul {
 		padding: 0;
 	}
