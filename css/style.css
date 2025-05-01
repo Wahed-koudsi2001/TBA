@@ -205,7 +205,7 @@ button:focus:not(:focus-visible) {
 	top: 0;
 	left: 0;
 }
-.accordion-item .accordion-button{
+.accordion-item .accordion-button {
 	font-weight: bold;
 }
 /* subheader */
@@ -7017,7 +7017,7 @@ i.icon-big {
 		margin: 25px 0;
 	}
 	.card {
-		height: 250px;
+		height: 260px;
 		width: 100%;
 	}
 
