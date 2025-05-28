@@ -312,49 +312,7 @@
 
         video_autosize();
 
-        // --------------------------------------------------
-        // filtering gallery
-        // --------------------------------------------------
-        var $container = jQuery('#gallery');
-        $container.isotope({
-            itemSelector: '.item',
-            filter: '*'
-        });
-        jQuery('#filters a').on("click", function () {
-            var $this = jQuery(this);
-            if ($this.hasClass('selected')) {
-                return false;
-            }
-            var $optionSet = $this.parents();
-            $optionSet.find('.selected').removeClass('selected');
-            $this.addClass('selected');
 
-            var selector = jQuery(this).attr('data-filter');
-            $container.isotope({
-                filter: selector
-            });
-            return false;
-        });
-
-
-        jQuery('.de-preview').each(function () {
-            var w = parseInt(jQuery(this).css("width"));
-            jQuery(this).css("height", w);
-            var h = parseInt(jQuery(this).find("img").css("height")) - w;
-            jQuery(this).find("img").css('bottom', -h);
-        });
-
-        jQuery('.de-preview').on("mouseenter", function () {
-            jQuery(this).find("img").animate({
-                'bottom': '0'
-            }, 10);
-        }).on("mouseleave", function () {
-            var w = parseInt(jQuery(this).css("width"));
-            var h = parseInt(jQuery(this).find("img").css("height")) - w;
-            jQuery(this).find("img").animate({
-                'bottom': -h
-            }, 10);
-        })
 
         // --------------------------------------------------
         // tabs
